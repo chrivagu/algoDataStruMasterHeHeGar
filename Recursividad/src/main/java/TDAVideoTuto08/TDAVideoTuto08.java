@@ -1,3 +1,5 @@
+package TDAVideoTuto08;
+
 public class TDAVideoTuto08 {
     public static void main(String[] args) {
         TDAVideoTuto08 objEsc = new TDAVideoTuto08();
