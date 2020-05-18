@@ -11,6 +11,11 @@
     <modules>
         <module>IntroEstructuraDatos</module>
         <module>Recursividad</module>
+        <module>EstructurasLineales</module>
+        <module>EstructurasNoLineales</module>
+        <module>MetodosDeOrdenamiento</module>
+        <module>MetodosDeBusqueda</module>
+        <module>AnalisisDeLosAlgoritmos</module>
     </modules>
 
 
