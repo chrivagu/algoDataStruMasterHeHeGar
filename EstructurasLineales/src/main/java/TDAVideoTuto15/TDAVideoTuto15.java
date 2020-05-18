@@ -9,8 +9,9 @@ public class TDAVideoTuto15 {
         do {
             try {
                 opcion = Integer.parseInt(JOptionPane.showInputDialog(null,
-                        "1. Agregar un elemento al inicio de la lista\n2. Mostrar los Datos de la lista\n"
-                                + "3. Salir", "Menu de Opciones", 3));
+                        "1. Agregar un elemento al inicio de la lista\n2. Agregar un elemento al final de la lista\n"
+                                + "3. Mostrar los Datos de la lista\n" +
+                                "4. Salir", "Menu de Opciones", 3));
                 switch (opcion) {
                     case 1:
                         try {
@@ -23,9 +24,20 @@ public class TDAVideoTuto15 {
                         }
                         break;
                     case 2:
-                        listita.mostrarLista();
+                        try {
+                            el = Integer.parseInt(JOptionPane.showInputDialog(null,
+                                    "Ingresa el Elemento:", "Insertando al final", 3));
+                            //Agregando al Nodo
+                            listita.agregarAlFinal(el);
+                        } catch (NumberFormatException n) {
+                            JOptionPane.showMessageDialog(null, "Error " + n.getMessage());
+                        }
                         break;
                     case 3:
+                        listita.mostrarLista();
+                        break;
+                    case 4:
+                        JOptionPane.showMessageDialog(null, "Programa Finalizado");
                         break;
                     default:
                         JOptionPane.showMessageDialog(null, "Opcion Incorrecta");
@@ -33,6 +45,6 @@ public class TDAVideoTuto15 {
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "Error " + e.getMessage());
             }
-        } while (opcion != 3);
+        } while (opcion != 4);
     }
 }

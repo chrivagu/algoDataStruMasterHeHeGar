@@ -7,6 +7,7 @@ public class Nodo {
     //Constructor para insertar al final
     public Nodo(int d) { //ayuda a insertar al final de la lista
         this.dato = d;
+        this.siguiente = null;
     }
 
     //Constructor para insertar al incio
