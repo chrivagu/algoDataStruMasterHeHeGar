@@ -45,4 +45,14 @@ public class Lista {
             recorrer = recorrer.siguiente;
         }
     }
+    //Metodo para eliminar un nodo del inicio
+    public int borrarDelInicio(){
+        int elemento = inicio.dato;
+        if(inicio==fin){
+            inicio=fin=null;
+        } else {
+            inicio=inicio.siguiente;
+        }
+        return elemento;
+    }
 }
