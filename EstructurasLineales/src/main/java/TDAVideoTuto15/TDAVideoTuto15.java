@@ -12,7 +12,8 @@ public class TDAVideoTuto15 {
                         "1. Agregar un elemento al inicio de la lista\n2. Agregar un elemento al final de la lista\n"
                                 + "3. Mostrar los Datos de la lista\n"
                                 + "4. Eliminar un Elemento del Inicio de la lista\n"
-                                + "5. Salir", "Menu de Opciones", 3));
+                                + "5. Eliminar un Elemento del Final de la lista\n"
+                                + "6. Salir", "Menu de Opciones", 3));
                 switch (opcion) {
                     case 1:
                         try {
@@ -43,6 +44,11 @@ public class TDAVideoTuto15 {
                                 "eliminando nodo del inicio", JOptionPane.INFORMATION_MESSAGE);
                         break;
                     case 5:
+                        el = listita.borrarDelFinal();
+                        JOptionPane.showMessageDialog(null, "El elemento eliminado es " + el,
+                                "eliminando nodo del final", JOptionPane.INFORMATION_MESSAGE);
+                        break;
+                    case 6:
                         JOptionPane.showMessageDialog(null, "Programa Finalizado");
                         break;
                     default:
@@ -51,6 +57,6 @@ public class TDAVideoTuto15 {
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "Error " + e.getMessage());
             }
-        } while (opcion != 5);
+        } while (opcion != 6);
     }
 }

@@ -9,8 +9,8 @@ public class Lista {
     }
 
     //Metodo para saber si la lista esta vacia
-    public boolean estaVacia(){
-        if(inicio==null){
+    public boolean estaVacia() {
+        if (inicio == null) {
             return true;
         } else {
             return false;
@@ -27,12 +27,12 @@ public class Lista {
     }
 
     //Metodo para insertar al final de la lista
-    public void agregarAlFinal(int elemento){
-        if(!estaVacia()){
-            fin.siguiente=new Nodo(elemento);
-            fin=fin.siguiente;
+    public void agregarAlFinal(int elemento) {
+        if (!estaVacia()) {
+            fin.siguiente = new Nodo(elemento);
+            fin = fin.siguiente;
         } else {
-            inicio=fin=new Nodo(elemento);
+            inicio = fin = new Nodo(elemento);
         }
     }
 
@@ -45,13 +45,30 @@ public class Lista {
             recorrer = recorrer.siguiente;
         }
     }
+
     //Metodo para eliminar un nodo del inicio
-    public int borrarDelInicio(){
+    public int borrarDelInicio() {
         int elemento = inicio.dato;
-        if(inicio==fin){
-            inicio=fin=null;
+        if (inicio == fin) {
+            inicio = fin = null;
         } else {
-            inicio=inicio.siguiente;
+            inicio = inicio.siguiente;
+        }
+        return elemento;
+    }
+
+    //Metodo para eliminar un nodo del final
+    public int borrarDelFinal() {
+        int elemento = fin.dato;
+        if (inicio == fin) {
+            inicio = fin = null;
+        } else {
+            Nodo temporal = inicio;
+            while (temporal.siguiente != fin) {
+                temporal = temporal.siguiente;
+            }
+            fin = temporal;
+            fin.siguiente = null;
         }
         return elemento;
     }
