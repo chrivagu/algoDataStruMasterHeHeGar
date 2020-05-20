@@ -13,7 +13,8 @@ public class TDAVideoTuto15 {
                                 + "3. Mostrar los Datos de la lista\n"
                                 + "4. Eliminar un Elemento del Inicio de la lista\n"
                                 + "5. Eliminar un Elemento del Final de la lista\n"
-                                + "6. Salir", "Menu de Opciones", 3));
+                                + "6. Eliminar un Elemento en Especifico\n"
+                                + "7. Salir", "Menu de Opciones", 3));
                 switch (opcion) {
                     case 1:
                         try {
@@ -49,14 +50,21 @@ public class TDAVideoTuto15 {
                                 "eliminando nodo del final", JOptionPane.INFORMATION_MESSAGE);
                         break;
                     case 6:
-                        JOptionPane.showMessageDialog(null, "Programa Finalizado");
+                        el = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingresa el " +
+                                        "Elemento a Eliminar...", "Eliminando Nodos en Especifico",
+                                JOptionPane.INFORMATION_MESSAGE));
+                        listita.eliminar(el);
+                        JOptionPane.showMessageDialog(null, "El elemento eliminado es " + el,
+                                "eliminando nodo en Especifico", JOptionPane.INFORMATION_MESSAGE);
                         break;
+                    case 7:
+                        JOptionPane.showMessageDialog(null, "Programa Finalizado");
                     default:
                         JOptionPane.showMessageDialog(null, "Opcion Incorrecta");
                 }
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "Error " + e.getMessage());
             }
-        } while (opcion != 6);
+        } while (opcion != 7);
     }
 }

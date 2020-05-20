@@ -72,4 +72,29 @@ public class Lista {
         }
         return elemento;
     }
+
+    //metodo para eliminar un Nodo en especificio
+    public void eliminar(int elemento) {
+        if (!estaVacia()) {
+            if (inicio == fin && elemento == inicio.dato) {
+                inicio = fin = null;
+            } else if (elemento == inicio.dato) {
+                inicio = inicio.siguiente;
+            } else {
+                Nodo anterior, temporal;
+                anterior = inicio;
+                temporal = inicio.siguiente;
+                while (temporal != null && temporal.dato != elemento) {
+                    anterior = anterior.siguiente;
+                    temporal = temporal.siguiente;
+                }
+                if (temporal != null) {
+                    anterior.siguiente = temporal.siguiente;
+                    if (temporal == fin) {
+                        fin = anterior;
+                    }
+                }
+            }
+        }
+    }
 }
