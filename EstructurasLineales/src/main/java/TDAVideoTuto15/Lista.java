@@ -97,4 +97,14 @@ public class Lista {
             }
         }
     }
+
+    //Metodo para buscar un Elemento
+    public boolean estaEnLaLista(int elemento) {
+        Nodo temporal = inicio;
+        while (temporal != null && temporal.dato != elemento) {
+            temporal = temporal.siguiente;
+        }
+        return temporal != null;
+    }
+
 }

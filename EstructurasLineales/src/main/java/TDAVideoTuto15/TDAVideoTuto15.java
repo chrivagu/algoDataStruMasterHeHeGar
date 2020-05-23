@@ -14,7 +14,8 @@ public class TDAVideoTuto15 {
                                 + "4. Eliminar un Elemento del Inicio de la lista\n"
                                 + "5. Eliminar un Elemento del Final de la lista\n"
                                 + "6. Eliminar un Elemento en Especifico\n"
-                                + "7. Salir", "Menu de Opciones", 3));
+                                + "7. Buscar un Elemento en la lista\n"
+                                + "8. Salir", "Menu de Opciones", 3));
                 switch (opcion) {
                     case 1:
                         try {
@@ -53,18 +54,36 @@ public class TDAVideoTuto15 {
                         el = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingresa el " +
                                         "Elemento a Eliminar...", "Eliminando Nodos en Especifico",
                                 JOptionPane.INFORMATION_MESSAGE));
-                        listita.eliminar(el);
-                        JOptionPane.showMessageDialog(null, "El elemento eliminado es " + el,
-                                "eliminando nodo en Especifico", JOptionPane.INFORMATION_MESSAGE);
+                        if (listita.estaEnLaLista(el)) {
+                            listita.eliminar(el);
+                            JOptionPane.showMessageDialog(null, "El elemento eliminado es " + el,
+                                    "eliminando nodo en Especifico", JOptionPane.INFORMATION_MESSAGE);
+                        } else {
+                            JOptionPane.showMessageDialog(null, "El Elemento "
+                                    + el + " No esta en la Lista ", "Nodo No Encontrado", JOptionPane.INFORMATION_MESSAGE);
+                        }
                         break;
                     case 7:
+                        el = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingresa el " +
+                                        "Elemento a Buscar...", "Buscando Nodos en la Lista",
+                                JOptionPane.INFORMATION_MESSAGE));
+                        if (listita.estaEnLaLista(el)) {
+                            JOptionPane.showMessageDialog(null, "El Elemento "
+                                    + el + " Si esta en la Lista ", "Nodo Encontrado", JOptionPane.INFORMATION_MESSAGE);
+                        } else {
+                            JOptionPane.showMessageDialog(null, "El Elemento "
+                                    + el + " No esta en la Lista ", "Nodo No Encontrado", JOptionPane.INFORMATION_MESSAGE);
+                        }
+                        break;
+                    case 8:
                         JOptionPane.showMessageDialog(null, "Programa Finalizado");
+                        break;
                     default:
                         JOptionPane.showMessageDialog(null, "Opcion Incorrecta");
                 }
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "Error " + e.getMessage());
             }
-        } while (opcion != 7);
+        } while (opcion != 8);
     }
 }
