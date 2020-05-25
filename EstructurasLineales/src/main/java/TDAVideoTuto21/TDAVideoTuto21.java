@@ -15,7 +15,9 @@ public class TDAVideoTuto21 {
                                 + "2. Agregar un Nodo al Final\n"
                                 + "3. Mostrar la lista de inicio a fin\n"
                                 + "4. Mostrar la lista de fin a inicio\n"
-                                + "5. Salir\n"
+                                + "5. Eliminar un Nodo del Inicio\n"
+                                + "6. Eliminar un Nodo del Final\n"
+                                + "7. Salir\n"
                                 + "Que deseas Hacer?",
                         "Menu de Opciones",
                         JOptionPane.INFORMATION_MESSAGE));
@@ -50,6 +52,26 @@ public class TDAVideoTuto21 {
                         }
                         break;
                     case 5:
+                        if (!listita.estVacia()) {
+                            elemento = listita.eliminarDelInicio();
+                            JOptionPane.showMessageDialog(null, "El elemento eliminado es " + elemento,
+                                    "Eliminando nodo del inicio", JOptionPane.INFORMATION_MESSAGE);
+                        } else {
+                            JOptionPane.showMessageDialog(null, "No Hay nodos aun",
+                                    "Lista vacia", JOptionPane.INFORMATION_MESSAGE);
+                        }
+                        break;
+                    case 6:
+                        if (!listita.estVacia()) {
+                            elemento = listita.eliminarDelFinal();
+                            JOptionPane.showMessageDialog(null, "El elemento eliminado es " + elemento,
+                                    "Eliminando nodo del final", JOptionPane.INFORMATION_MESSAGE);
+                        } else {
+                            JOptionPane.showMessageDialog(null, "No Hay nodos aun",
+                                    "Lista vacia", JOptionPane.INFORMATION_MESSAGE);
+                        }
+                        break;
+                    case 7:
                         JOptionPane.showMessageDialog(null, "Aplicacion Finalizada",
                                 "Fin", JOptionPane.INFORMATION_MESSAGE);
                         break;
@@ -61,6 +83,6 @@ public class TDAVideoTuto21 {
             } catch (NumberFormatException n) {
                 JOptionPane.showMessageDialog(null, "Error " + n.getMessage());
             }
-        } while (opcion != 5);
+        } while (opcion != 7);
     }
 }
