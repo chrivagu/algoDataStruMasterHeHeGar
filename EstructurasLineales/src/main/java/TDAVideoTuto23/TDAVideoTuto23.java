@@ -6,10 +6,11 @@ public class TDAVideoTuto23 {
     public static void main(String[] args) {
         ListaLC listita = new ListaLC();
         int opcion = 0, elemento;
+        boolean eliminado = false;
         do {
             try {
                 opcion = Integer.parseInt(JOptionPane.showInputDialog(null,
-                          "1. Agregar un nodo a la lista circular\n"
+                        "1. Agregar un nodo a la lista circular\n"
                                 + "2. Eliminar un nodo de la lista circular\n"
                                 + "3. Mostrar los datos de la lista circular\n"
                                 + "4. Salir\n"
@@ -25,10 +26,22 @@ public class TDAVideoTuto23 {
                         listita.insertar(elemento);
                         break;
                     case 2:
-                       /* elemento = Integer.parseInt(JOptionPane.showInputDialog(null,
-                                "Ingresa el elemento del Nodo", "Agregando Nodo al final",
-                                JOptionPane.INFORMATION_MESSAGE));
-                        listita.agregarAlFinal(elemento);*/
+                        if (!listita.estaVacia()) {
+                            elemento = Integer.parseInt(JOptionPane.showInputDialog(null,
+                                    "Ingresa el elemento del Nodo a eliminar", "eliminando nodo de la lista circular",
+                                    JOptionPane.INFORMATION_MESSAGE));
+                            eliminado = listita.eliminar(elemento);
+                            if (eliminado) {
+                                JOptionPane.showMessageDialog(null, "el elemento eliminado es " + elemento,
+                                        "Eliminando nodos", JOptionPane.INFORMATION_MESSAGE);
+                            } else {
+                                JOptionPane.showMessageDialog(null, "el elemento " + elemento + " no esta en la lista",
+                                        "Elemento no encontrado", JOptionPane.INFORMATION_MESSAGE);
+                            }
+                        } else {
+                            JOptionPane.showMessageDialog(null, "Aun no hay nodos",
+                                    "Lista Vacia", JOptionPane.INFORMATION_MESSAGE);
+                        }
                         break;
                     case 3:
                         if (!listita.estaVacia()) {
