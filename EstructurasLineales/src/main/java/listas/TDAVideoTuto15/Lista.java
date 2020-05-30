@@ -1,4 +1,4 @@
-package TDAVideoTuto15;
+package listas.TDAVideoTuto15;
 
 public class Lista {
     protected Nodo inicio, fin; //Punteros para saber donde esta el inicio y el fin

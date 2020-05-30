@@ -1,4 +1,4 @@
-package TDAVideoTuto21;
+package listas.TDAVideoTuto21;
 
 import javax.swing.*;
 

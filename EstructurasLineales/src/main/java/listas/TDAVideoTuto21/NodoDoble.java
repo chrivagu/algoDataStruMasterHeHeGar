@@ -1,4 +1,4 @@
-package TDAVideoTuto21;
+package listas.TDAVideoTuto21;
 
 public class NodoDoble {
     public int dato;

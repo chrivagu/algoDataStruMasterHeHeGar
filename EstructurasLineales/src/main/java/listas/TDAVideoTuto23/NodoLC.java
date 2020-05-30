@@ -1,4 +1,4 @@
-package TDAVideoTuto23;
+package listas.TDAVideoTuto23;
 
 public class NodoLC {
     int dato;
