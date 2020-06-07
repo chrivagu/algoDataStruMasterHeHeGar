@@ -1,4 +1,4 @@
-package colas;
+package colas.memoriaDinamica;
 
 public class NodoCola {
     int dato;

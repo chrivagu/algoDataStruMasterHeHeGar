@@ -1,4 +1,4 @@
-package colas;
+package colas.memoriaDinamica;
 
 public class Cola {
     NodoCola inicio, fin;
